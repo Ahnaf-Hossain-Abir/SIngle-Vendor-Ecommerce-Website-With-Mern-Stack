@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import auth from "../../../../../public/products/auth.jpeg"
 import ButtonComponent from "@/Components/CommonComponents/ButtonComponent/ButtonComponent";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import { login } from "../../../../actions/log.js";
 
 const Signup = () => {
     return (
@@ -38,6 +41,9 @@ const Signup = () => {
 
           <div className="mt-8 mb-8 w-[371px] h-[56px]">
             <button className="font-normal text-base border rounded py-4 px-[86px] flex items-center gap-3"><span><FcGoogle className="w-6 h-6"/></span> Sign up with Google</button>
+          </div>
+          <div onClick={()=>login("github")} className="mt-8 mb-8 w-[371px] h-[56px]">
+            <button className="font-normal text-base border rounded py-4 px-[86px] flex items-center gap-3"><span><FaGithub className="w-6 h-6"/></span> Sign up with Github</button>
           </div>
 
           <p className="text-center">Already have account? <u className="ml-3"><Link href={"/navbar/signup/login"}>Log in</Link></u></p>
