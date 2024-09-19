@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { CiSearch } from "react-icons/ci";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const paramName = useParams();
@@ -73,6 +74,11 @@ const Navbar = () => {
             {/* shopping cart */}
             <div>
             <Link href={"/navbar/shoppingcart"}><MdOutlineShoppingCart className="w-8 h-8 cursor-pointer" /></Link>
+            </div>
+            
+            {/* profile icon */}
+            <div>
+            <Link href={"/navbar/user"}><CgProfile className="w-8 h-8 cursor-pointer" /></Link>
             </div>
           </div>
         </nav>

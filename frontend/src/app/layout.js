@@ -1,4 +1,3 @@
-
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/Header/Header";
@@ -6,9 +5,7 @@ import { Providers } from "./provider/provider";
 import ClientSessionProvider from "@/Components/CommonComponents/ClientSessionProvider/ClientSessionProvider";
 import { auth } from "../../../backend/auth";
 
-
 const inter = Inter({ subsets: ["latin"] });
-
 
 export const metadata = {
   title: "HOI E-Commerce",
@@ -16,17 +13,14 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const session = await auth();
   return (
     <html lang="en">
-    <body className={inter.className}>
-      <Providers>
-        <ClientSessionProvider session={session}>
+      <body className={inter.className}>
+        <Providers>
           <Header />
           {children}
-        </ClientSessionProvider>
-      </Providers>
-    </body>
-  </html>
+        </Providers>
+      </body>
+    </html>
   );
 }

@@ -1,45 +1,91 @@
-import React from 'react';
+import Image from "next/image";
+import tv from "../../../../../public/products/tv.png"
+import ButtonComponent from "@/Components/CommonComponents/ButtonComponent/ButtonComponent";
+import Link from "next/link";
 
 const ShoppingCart = () => {
     return (
-        <section className='max-w-[1170px] mx-auto mt-16'>
-         <div className='flex justify-between items-center'>
-            <div className='billing-details w-[470px]'>
-            <h2 className='text-3xl font-medium text-[#000000]'>Billing Details</h2>
+       <section className="w-[1170px] mx-auto mt-16">
+        
+        <div className="flex flex-col gap-6">
+          <div className="shadow-lg rounded bg-[#FFFFFF] h-[72px]">
+            <ul className="h-full flex justify-between items-center">
+              <li className="w-[200px] text-center">Product</li>
+              <li className="w-[200px] text-center">Price</li>
+              <li className="w-[200px] text-center">Quantity</li>
+              <li className="w-[200px] text-center">Subtotal</li>
+            </ul>
+          </div>
+          
+          <div className="shadow-lg rounded bg-[#FFFFFF] h-[102px]">
+            <ul className="h-full flex justify-between items-center">
+            <li className="w-[200px] flex items-center justify-center gap-2">
+              <Image src={tv} width={50} height={39}/>
+              <span>LCD Monitor</span>
+            </li>
+              <li className="w-[200px] text-center">$650</li>
+              <li className="w-[200px] text-center"><input type="number" name="quantity" id="" className="border-2 border-gray-500 focus:outline-none w-[80px] h-[52px]" /></li>
+              <li className="w-[200px] text-center">$650</li>
+            </ul>
+          </div>
+          
+          <div className="shadow-lg rounded bg-[#FFFFFF] h-[102px]">
+            <ul className="h-full flex justify-between items-center">
+            <li className="w-[200px] flex items-center justify-center gap-2">
+              <Image src={tv} width={50} height={39}/>
+              <span>LCD Monitor</span>
+            </li>
+              <li className="w-[200px] text-center">$650</li>
+              <li className="w-[200px] text-center"><input type="number" name="quantity" id="" className="border-2 border-gray-500 focus:outline-none w-[80px] h-[52px]" /></li>
+              <li className="w-[200px] text-center">$650</li>
+            </ul>
+          </div>
 
-            <div className='mt-8 '>
-            <label className='text-base font-normal text-gray-500 '>First Name*</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="text" name="name" id="" required />
-            <label className='text-base font-normal text-gray-500 '>Company Name</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="text" name="name" id="" required />
-            <label className='text-base font-normal text-gray-500 '>Street Address*</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="text" name="name" id="" required />
-            <label className='text-base font-normal text-gray-500 '>Apartment, floor, etc. (optional)</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="text" name="name" id="" required />
-            <label className='text-base font-normal text-gray-500 '>Town/City*</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="text" name="name" id="" required />
-            <label className='text-base font-normal text-gray-500 '>Phone Number*</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="tel" name="name" id="" required />
-            <label className='text-base font-normal text-gray-500 '>Email Address*</label>
-            <br />
-            <input className='w-full h-[50px] border bg-gray-200 rounded mt-2 mb-8 focus:outline-none' type="email" name="name" id="" required />
+          <div className="flex items-center justify-between">
+          <ButtonComponent name={"Return To Shop"} fontSize={"text-base"} border={"border border-gray-400"} fontWeight={"font-medium"} width={"w-[218px]"} height={"h-[56px]"} radius={"rounded"} paddingX={"px-12"} paddingY={"py-4"}/>
 
-            <input  type="checkbox" name="check" id="" />
-            <span className='ml-3'>Save this information for faster check-out next time</span>
-            </div>
-            </div>
+          <ButtonComponent name={"Update Cart"} fontSize={"text-base"} border={"border border-gray-400"} fontWeight={"font-medium"} width={"w-[195px]"} height={"h-[56px]"} radius={"rounded"} paddingX={"px-12"} paddingY={"py-4"}/>
+          </div>
+         
+        </div>
 
-            <div className='bill w-[527px] flex justify-between'>
-            
-            </div>
-        </div> 
-        </section>
+        <div className=" flex justify-between">
+        
+        <div className='flex justify-between items-center gap-4'>
+              
+              <div className='w-[300px] h-[56px]'>
+               <input className='w-full h-full border border-black rounded pl-4' type="text" name="coupon" id="" placeholder='Coupon Code'/>
+              </div>
+
+              <ButtonComponent name={"Apply Coupon"} nameColor={"text-white"} fontSize={"text-base"} fontWeight={"font-medium"} width={"w-[211px]"} height={"h-[56px]"} radius={"rounded"} paddingX={"px-12"} paddingY={"py-4"} btnColor={"bg-[#DB4444]"}/>
+        </div>
+
+        <div className="mt-12 w-[470px]  border border-black rounded p-6">
+        <h5 className="font-medium text-[20px] text-[#000000]">Cart Total</h5>
+        
+        <div className='mt-6 flex flex-col gap-3'>
+           <div className=' w-full flex  justify-between items-center'>
+            <h6>Subtotal:</h6>
+             <p>$650</p>
+             </div>
+             <div className="w-full border bg-gray-500 "></div>
+            <div className='w-full  flex justify-between items-center'>
+            <h6>Subtotal:</h6>
+             <p>$650</p>
+             </div>
+             <div className="w-full border bg-gray-500 "></div>
+             <div className='w-full h-6 flex justify-between items-center'>
+            <h6>Total:</h6>
+             <p>$650</p>
+             </div>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <Link href={"/bill"}> <ButtonComponent name={"Procees to checkout"} nameColor={"text-white"} fontSize={"text-base"} fontWeight={"font-medium"} width={"w-[260px]"} height={"h-[56px]"} radius={"rounded"} paddingX={"px-12"} paddingY={"py-4"} btnColor={"bg-[#DB4444]"}/></Link>
+        </div>
+        </div>
+        </div>
+       </section>
     );
 };
 

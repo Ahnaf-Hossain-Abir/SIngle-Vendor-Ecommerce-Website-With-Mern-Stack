@@ -1,6 +1,7 @@
 import { TbPhone } from "react-icons/tb";
 import { LuMessagesSquare } from "react-icons/lu";
 import ButtonComponent from "@/Components/CommonComponents/ButtonComponent/ButtonComponent";
+import Link from "next/link";
 
 const Contact = () => {
   
